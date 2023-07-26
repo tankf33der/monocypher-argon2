@@ -15,8 +15,8 @@
       8
       8
       1
-      "mikemike"
-      "mikemike" ) )
+      (pack (mapcar char (mapcar char (chop "mikemike"))))
+      (pack (mapcar char (mapcar char (chop "mikemike")))) ) )
 
 (msg 'ok)
 (bye)
