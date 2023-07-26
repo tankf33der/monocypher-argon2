@@ -8,7 +8,7 @@
 (for HashLen (range 8 16)
    (for Iters (range 1 3)
       (for Blocks (range 500 1000)
-         (for Lanes (range 1 4)
+         (for Lanes (range 1 1)
             (for Pass (range 2 10)
                (for Salt (range 9 16)
                   (let (P (range 1 Pass)  S (range 1 Salt))

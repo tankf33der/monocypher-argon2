@@ -20,10 +20,10 @@
       1
       (pack (mapcar char (mapcar char (chop "mikemike"))))
       (pack (mapcar char (mapcar char (chop "mikemike")))) ) )
-(let (P (range 1 100)  S (range 1 100))
-   (println
-      (libargon2 8 8 1 P S 8)
-      (crypto_argon2id 8 8 8 1 (pack (mapcar char P)) (pack (mapcar char S)))
+(let (P (range 1 10)  S (range 1 10))
+   (test
+      (libargon2 8 128 1 P S 8)
+      (crypto_argon2id 8 128 8 1 (pack (mapcar char P)) (pack (mapcar char S)))
    )
 )
 
