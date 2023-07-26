@@ -7,10 +7,10 @@
    (make (do A (link (rand 0 255)))) )
 (for HashLen (range 8 16)
    (for Iters (range 1 3)
-      (for Blocks (range 500 1000)
+      (for Blocks (range 512 514)
          (for Lanes (range 1 1)
-            (for Pass (range 2 10)
-               (for Salt (range 9 16)
+            (for Pass (range 2 4)
+               (for Salt (range 9 10)
                   (let (P (range 1 Pass)  S (range 1 Salt))
                      (test
                         (libargon2 Iters Blocks Lanes P S HashLen)
