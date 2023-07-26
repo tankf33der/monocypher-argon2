@@ -17,15 +17,3 @@
          (list 'R (cons HashLen 'B HashLen))
          HashLen )
       R ) )
-
-(println
-   (libargon2
-      4
-      8
-      1
-      (mapcar char (chop "mike"))
-      (mapcar char (chop "mikemike"))
-      4 ) )
-
-(msg 'ok)
-(bye)
