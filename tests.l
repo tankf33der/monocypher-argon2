@@ -17,6 +17,9 @@
       1
       (pack (mapcar char (mapcar char (chop "mikemike"))))
       (pack (mapcar char (mapcar char (chop "mikemike")))) ) )
-
+(let (P (1 2 3 4)  S (range 1 8))
+   (test
+      (libargon2 8 8 1 P S 8)
+      (crypto_argon2id 8 8 8 1 (pack (mapcar char P)) (pack (mapcar char S))) ) )
 (msg 'ok)
 (bye)
