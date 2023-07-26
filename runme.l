@@ -4,24 +4,22 @@
 # (de crypto_argon2id (Out   Blocks Iters Lanes Password Salt Key Ad)
 (seed (in "/dev/urandom" (rd 8)))
 (de randL (A)
-   (make (do A (link (rand 0 255)))) )
+   (make (do A (link (rand 1 127)))) )
 (for HashLen (range 8 16)
    (for Iters (range 1 3)
-      (for Blocks (range 512 514)
+      (for Blocks (range 511 515)
          (for Lanes (range 1 1)
             (for Pass (range 2 4)
                (for Salt (range 9 10)
-                  (let (P (range 1 Pass)  S (range 1 Salt))
+                  (let (P (randL Pass)  S (randL Salt))
                      (test
                         (libargon2 Iters Blocks Lanes P S HashLen)
-                        (crypto_argon2id HashLen Blocks Iters Lanes (pack (mapcar char P)) (pack (mapcar char S)))
-                     )
-                  )
-               )
-            )
-         )
-      )
-   )
-)
+                        (crypto_argon2id
+                           HashLen
+                           Blocks
+                           Iters
+                           Lanes
+                           (pack (mapcar char P))
+                           (pack (mapcar char S)) ) ) ) ) ) ) ) ) )
 (msg 'ok)
 (bye)
