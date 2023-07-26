@@ -3,7 +3,7 @@
 # Argon2id #
 ############
 
-(de crypto_argon2id (Out Blocks Iters Password Salt Key Ad)
+(de crypto_argon2id (Out Blocks Iters Lanes Password Salt Key Ad)
    (let
       (Config (%@ "malloc" 'P 16)
          Inputs (%@ "malloc" 'P 24)
@@ -18,7 +18,7 @@
          (cons 2  4)
          (cons Blocks 4)
          (cons Iters 4)
-         (1 . 4) )
+         (cons Lanes 4) )
       (setq
          PtrPass (%@ "strdup" 'P Password)
          PtrSalt (%@ "strdup" 'P Salt)
