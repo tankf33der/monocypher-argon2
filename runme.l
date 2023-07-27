@@ -8,8 +8,8 @@
 (for HashLen (range 8 16)
    (for Iters (range 1 3)
       (for Blocks (range 511 515)
-         (for Lanes (range 1 1)
-            (for Pass (range 2 4)
+         (for Lanes (range 1 10)
+            (for Pass (range 0 4)
                (for Salt (range 9 10)
                   (let (P (randL Pass)  S (randL Salt))
                      (test
