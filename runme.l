@@ -1,7 +1,7 @@
 (load "monocypher.l")
 (load "libargon2.l")
 # (de libargon2       (Iters Blocks Lanes Pass  Salt HashLen)
-# (de crypto_argon2id (Out   Blocks Iters Lanes Password Salt Key Ad)
+# (de crypto_argon2d  (Out   Blocks Iters Lanes Password Salt Key Ad)
 (seed (in "/dev/urandom" (rd 8)))
 (de randL (A)
    (make (do A (link (rand 1 127)))) )
@@ -14,7 +14,7 @@
                   (let (P (randL Pass)  S (randL Salt))
                      (test
                         (libargon2 Iters Blocks Lanes P S HashLen)
-                        (crypto_argon2id
+                        (crypto_argon2d
                            HashLen
                            Blocks
                            Iters
