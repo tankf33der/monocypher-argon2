@@ -10,7 +10,7 @@
       (for Blocks (range 511 515)
          (for Lanes (range 1 10)
             (for Pass (range 0 4)
-               (for Salt (range 9 10)
+               (for Salt (range 8 10)
                   (let (P (randL Pass)  S (randL Salt))
                      (test
                         (libargon2 Iters Blocks Lanes P S HashLen)
