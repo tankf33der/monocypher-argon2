@@ -5,7 +5,7 @@
 (seed (in "/dev/urandom" (rd 8)))
 (de randL (A)
    (make (do A (link (rand 1 127)))) )
-(for HashLen (range 8 16)
+(for HashLen (range 7 16)
    (for Iters (range 1 3)
       (for Blocks (range 511 515)
          (for Lanes (range 1 10)
