@@ -5,7 +5,7 @@
          R NIL )
       (native
          "libargon2.so"
-         "argon2id_hash_raw"
+         "argon2d_hash_raw"
          'I
          Iters
          Blocks
